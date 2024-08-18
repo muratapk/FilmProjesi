@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Delete" asp-controller="Category">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kategori Adı</label>
+        <input readonly type="text" class="form-control" name="CategoryName" asp-for="CategoryName"   placeholder="Kategori Adı">
+        <input type="hidden" asp-for="CategoryId" name="CategoryId"/>
+    </div>
+  
+   
+    <button type="submit" class="btn btn-primary">Silmek İstiyorum</button>
+    <a class="btn btn-dark" asp-action="Index" asp-controller="Category">İptal</a>
+
+</form>

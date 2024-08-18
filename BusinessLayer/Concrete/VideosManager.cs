@@ -12,6 +12,12 @@ namespace BusinessLayer.Concrete
     public class VideosManager : IVideosService
     {
         IVideosDal _videoDal;
+
+        public VideosManager(IVideosDal videoDal)
+        {
+            _videoDal = videoDal;
+        }
+
         public List<Videos> GetAll()
         {
             return _videoDal.GetAll();

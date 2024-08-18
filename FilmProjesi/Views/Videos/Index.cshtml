@@ -1,4 +1,4 @@
-﻿@model List<EntityLayer.Concrete.Category>
+﻿@model List<EntityLayer.Concrete.Videos>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -19,22 +19,28 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Kategori Adı</th>
+                                <th>Film Adı</th>
+                                <th>Kategorisi</th>
+                                <th>Yılı</th>
+                                <th>Video Resim</th>
                                 <th>Düzeltme</th>
                                 <th>Silme</th>
                             </tr>
                         </thead>
                         <tbody>
-                         @foreach(var item in Model)
-                          {
-                            <tr>
-                                <td>@item.CategoryName</td>
-                                <td><a class="btn btn-success" asp-action="Edit" asp-route-id="@item.CategoryId" >Düzelt</a></td>
-                                    <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CategoryId">Silme</a></td>
-                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Title</td>
+                                    <td>@item.CategoryId</td>
+                                    <td>@item.Year</td>
+                                    <td>@item.Picture</td>
+                                    <td><a class="btn btn-success" asp-action="Edit" asp-route-id="@item.VideoId">Düzelt</a></td>
+                                    <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.VideoId">Silme</a></td>
+                                </tr>
                             }
-                         
-                          
+
+
                         </tbody>
                     </table>
                 </div>

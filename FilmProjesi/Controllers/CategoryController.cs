@@ -6,10 +6,11 @@ namespace FilmProjesi.Controllers
 {
     public class CategoryController : Controller
     {
-        CategoryManager cm=new CategoryManager();
+     CategoryManager categoryManager = new CategoryManager(new EfCategoryRepository());
         public IActionResult Index()
         {
-            return View();
+           var result= categoryManager.GetAll();
+            return View(result);
         }
     }
 }

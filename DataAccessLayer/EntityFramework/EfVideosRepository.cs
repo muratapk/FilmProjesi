@@ -12,8 +12,6 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfVideosRepository : GenericRepository<Videos>, IVideosDal
     {
-        public EfVideosRepository(Context context) : base(context)
-        {
-        }
+        
     }
 }

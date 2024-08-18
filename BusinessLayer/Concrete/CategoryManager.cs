@@ -13,7 +13,10 @@ namespace BusinessLayer.Concrete
     {
         ICategoryDal _categoryDal;
 
-       
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
 
         public List<Category> GetAll()
         {

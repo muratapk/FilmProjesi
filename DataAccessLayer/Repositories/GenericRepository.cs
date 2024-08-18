@@ -11,12 +11,13 @@ namespace DataAccessLayer.Repositories
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
-        private readonly Context _context;
+        //private readonly Context _context;
 
-        public GenericRepository(Context context)
-        {
-            _context = context;
-        }
+        //public GenericRepository(Context context)
+        //{
+        //    _context = context;
+        //}
+        protected Context _context = new Context();
 
         public void Add(T entity)
         {

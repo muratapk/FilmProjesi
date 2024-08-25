@@ -5,4 +5,15 @@
 }
 
 @await Component.InvokeAsync("FeaturedList")
+<section id="filmler">
+    <div class="container">
+        <div class="row">
+           @await Component.InvokeAsync("AllFilms")
+            <div class="col-md-3">
+              @await Component.InvokeAsync("TrendFilms")
+              @await Component.InvokeAsync("SearchForm")
+            </div>
+        </div>
+    </div>
+</section>
 

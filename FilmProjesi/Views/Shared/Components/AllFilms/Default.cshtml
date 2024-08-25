@@ -1,0 +1,23 @@
+﻿@model List<EntityLayer.Concrete.Videos>
+<div class="col-md-9">
+    <div class="row">
+        <!--film Başlangıç-->
+        @foreach(var item in Model)
+        {
+            <div class="col-4 border my-3 p-2">
+                <img src="/Film_Images/@item.Picture" class="img-fluid border mt-2">
+                <h4 class="text-center">@item.Title</h4>
+                <p><span class="badge text-bg-danger">@item.CategoryId</span></p>
+                <hr>
+                <div class="altbilgi d-flex flex-row justify-content-between">
+                    <div class="bilgi"><span class="badge text-bg-warning">@item.Year</span></div>
+                    <div class="bilgi"><span class="badge text-bg-success">@item.Director</span></div>
+                    <div class="bilgi"><span class="badge text-bg-info">@item.Actors</span></div>
+                </div>
+            </div>
+        }
+        
+       
+       
+    </div>
+</div>

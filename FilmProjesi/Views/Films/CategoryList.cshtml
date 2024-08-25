@@ -1,0 +1,133 @@
+﻿@model List<EntityLayer.Concrete.Videos>
+@{
+    ViewData["Title"] = "CategoryList";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                @foreach(var item in Model)
+                {
+                    
+               
+                <!--film Başlangıç-->
+                <div class="col-4 border my-3 p-2">
+                    <img src="/Film_Images/@item.Picture" class="img-fluid border mt-2">
+                    <h4 class="text-center">@item.Title</h4>
+                    <p><span class="badge text-bg-danger">Kateogisi</span></p>
+                    <hr>
+                    <div class="altbilgi d-flex flex-row justify-content-between">
+                        <div class="bilgi"><span class="badge text-bg-warning">@item.Year</span></div>
+                        <div class="bilgi"><span class="badge text-bg-success">@item.Actors</span></div>
+                        <div class="bilgi"><span class="badge text-bg-info">@item.Director</span></div>
+                    </div>
+                </div>
+                <!--film bitiş-->
+                }
+             
+             
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+
+                <div class="col">
+                    <h5>Trend Filmler</h5>
+                    <!--film liste başlangıç-->
+                    <div class="trendler d-flex flex-row border-1 rounded">
+                        <div class="bolum">
+                            <img src="/images/film.jpg" class="img-fluid">
+                        </div>
+                        <div class="bolum">
+                            <h5>Başlık</h5>
+                            <p>Kategori</p>
+                        </div>
+                    </div>
+                    <!--film liste bitiş-->
+                    <div class="trendler d-flex flex-row border-1 rounded">
+                        <div class="bolum">
+                            <img src="images/film.jpg" class="img-fluid">
+                        </div>
+                        <div class="bolum">
+                            <h5>
+                                Başlık</h3>
+                                <p>Kategori</p>
+                        </div>
+                    </div>
+                    <div class="trendler d-flex flex-row border-1 rounded">
+                        <div class="bolum">
+                            <img src="images/film.jpg" class="img-fluid">
+                        </div>
+                        <div class="bolum">
+                            <h5>
+                                Başlık</h3>
+                                <p>Kategori</p>
+                        </div>
+                    </div>
+                    <div class="trendler d-flex flex-row border-1 rounded">
+                        <div class="bolum">
+                            <img src="images/film.jpg" class="img-fluid">
+                        </div>
+                        <div class="bolum">
+                            <h5>
+                                Başlık</h3>
+                                <p>Kategori</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h5>Film Robotu</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, quos.</p>
+                    <form action="" method="post" id="arama">
+                        <select name="tarzi" id="" class="form-select">
+                            <option value="">Dublaj</option>
+                            <option value="">Alt Yazı</option>
+                            <option value="">Yerli Film</option>
+
+                        </select>
+
+                        <select name="tarzi" id="" class="form-select">
+                            <option value="">Dublaj</option>
+                            <option value="">Alt Yazı</option>
+                            <option value="">Yerli Film</option>
+
+                        </select>
+                        <select name="tarzi" id="" class="form-select">
+                            <option value="">Dublaj</option>
+                            <option value="">Alt Yazı</option>
+                            <option value="">Yerli Film</option>
+
+                        </select>
+                        <select name="tarzi" id="" class="form-select">
+                            <option value="">Dublaj</option>
+                            <option value="">Alt Yazı</option>
+                            <option value="">Yerli Film</option>
+
+                        </select>
+                        <select name="tarzi" id="" class="form-select">
+                            <option value="">Dublaj</option>
+                            <option value="">Alt Yazı</option>
+                            <option value="">Yerli Film</option>
+
+                        </select>
+                        <select name="tarzi" id="" class="form-select">
+                            <option value="">Dublaj</option>
+                            <option value="">Alt Yazı</option>
+                            <option value="">Yerli Film</option>
+
+                        </select>
+                        <div class="my-3">
+                            <input type="submit" class="btn" value="Filmi Getir">
+                            <input type="reset" class="btn" value="Temizle">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+﻿@model List<EntityLayer.Concrete.Category>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Kategoriler
+    </a>
+    <ul class="dropdown-menu">
+        @foreach(var item in Model)
+        {
+            <li><a class="dropdown-item" asp-action="CategoryList" asp-controller="Films" asp-route-id="@item.CategoryId">@item.CategoryName</a></li>
+            <li><hr class="dropdown-divider"></li>
+        }
+       
+        
+       
+        
+    </ul>
+</li>

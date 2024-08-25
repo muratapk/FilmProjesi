@@ -15,7 +15,12 @@
         @foreach(var item in Model)
         {
             <div class="col-3 text-center border">
-                <img src="images/film.jpg" class="img-fluid border mt-2">
+                <img src="@(
+              item.Picture == null
+              ? "Film_Images/resim_yok.png"
+               : "Film_Images/" + item.Picture
+              )   
+                " class="img-fluid border mt-2">
                 <h4>@item.Title</h4>
                 <p>@item.CategoryId</p>
                 <a asp-action="Details" asp-controller="Films" asp-route-id="@item.VideoId" class="btn btn-primary mb-2">Film İzle</a>

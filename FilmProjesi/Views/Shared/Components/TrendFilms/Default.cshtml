@@ -1,0 +1,25 @@
+﻿@model List<EntityLayer.Concrete.Videos>
+<div class="row">
+
+    <div class="col">
+        <h5>Trend Filmler</h5>
+        @foreach(var item in Model)
+        {
+            <!--film liste başlangıç-->
+            <div class="trendler d-flex flex-row border-1 rounded">
+                <div class="bolum">
+                    <img src="/Film_Images/@item.Picture" class="img-fluid">
+                </div>
+                <div class="bolum">
+                    <h5>@item.Title</h5>
+                    <p>@item.CategoryId</p>
+                </div>
+            </div>
+            <!--film liste bitiş-->
+        }
+       
+      
+       
+       
+    </div>
+</div>

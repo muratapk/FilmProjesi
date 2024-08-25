@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Videos
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h5>@Model.Title</h5>
+            <h6>@Model.CategoryId</h6>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            @Model.Country
+        </div>
+        <div class="col-md-4">
+            @Model.Year
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <img src="/Film_Images/@Model.Picture" class="img-fluid" />
+        </div>
+        <div class="col-md-9">
+            @Model.Description
+        </div>
+    </div>
+</div>

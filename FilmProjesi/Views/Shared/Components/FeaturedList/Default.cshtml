@@ -11,34 +11,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-3 text-center border">
-            <img src="images/film.jpg" class="img-fluid border mt-2">
-            <h4>Film Adı</h4>
-            <p>Lorem10</p>
-            <a href="" class="btn btn-primary mb-2">Film İzle</a>
+        
+        @foreach(var item in Model)
+        {
+            <div class="col-3 text-center border">
+                <img src="images/film.jpg" class="img-fluid border mt-2">
+                <h4>@item.Title</h4>
+                <p>@item.CategoryId</p>
+                <a asp-action="Details" asp-controller="Films" asp-route-id="@item.VideoId" class="btn btn-primary mb-2">Film İzle</a>
 
-        </div>
-        <div class="col-3 text-center border">
-            <img src="images/film.jpg" class="img-fluid border mt-2">
-            <h4>Film Adı</h4>
-            <p>Lorem10</p>
-            <a href="" class="btn btn-primary mb-2">Film İzle</a>
-
-        </div>
-        <div class="col-3 text-center border">
-            <img src="images/film.jpg" class="img-fluid border mt-2">
-            <h4>Film Adı</h4>
-            <p>Lorem10</p>
-            <a href="" class="btn btn-primary mb-2">Film İzle</a>
-
-        </div>
-        <div class="col-3 text-center border">
-            <img src="images/film.jpg" class="img-fluid border mt-2">
-            <h4>Film Adı</h4>
-            <p>Lorem10</p>
-            <a href="" class="btn btn-primary mb-2">Film İzle</a>
-
-        </div>
+            </div>
+        }
+       
+    
+       
+       
 
     </div>
 

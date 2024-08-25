@@ -1,8 +1,8 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
 
-<h1>Index</h1>
+@await Component.InvokeAsync("FeaturedList")
 

@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Create" asp-controller="CategoryApi">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kategori Adı</label>
+        <input type="text" class="form-control" name="CategoryName" placeholder="Kategori Adı">
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

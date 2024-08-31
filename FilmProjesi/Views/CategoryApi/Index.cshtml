@@ -1,0 +1,51 @@
+﻿@model List<EntityLayer.Concrete.Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<h1>Index</h1>
+<a class="btn btn-warning" asp-action="Create">Yeni Kayıt</a>
+<div class="row">
+    <div class="col-md-12">
+        <div class="white_shd full margin_bottom_30">
+            <div class="full graph_head">
+                <div class="heading1 margin_0">
+                    <h2>Kategoriler</h2>
+                </div>
+            </div>
+            <div class="table_section padding_infor_info">
+                <div class="table-responsive-sm">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Kategori Adı</th>
+                                <th>Düzeltme</th>
+                                <th>Silme</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.CategoryName</td>
+                                    <td><a class="btn btn-success" asp-action="Edit" asp-route-id="@item.CategoryId">Düzelt</a></td>
+                                    <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CategoryId">Silme</a></td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+

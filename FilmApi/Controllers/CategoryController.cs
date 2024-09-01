@@ -23,7 +23,7 @@ namespace FilmApi.Controllers
         {
             return await _context.Categories.ToListAsync();
         }
-        [HttpGet("id")]
+        [HttpGet("Get/{id}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
             return await _context.Categories.FindAsync(id);

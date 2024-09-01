@@ -56,6 +56,7 @@ namespace FilmProjesi.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
+
             try
             {
                 Category category = new Category();

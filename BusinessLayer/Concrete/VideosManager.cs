@@ -1,9 +1,11 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,5 +45,20 @@ namespace BusinessLayer.Concrete
         {
             _videoDal.Update(entity);
         }
+
+        public List<Videos> GetList(Expression<Func<Videos, bool>> filter = null)
+        {
+            if (filter != null)
+            {
+                // Func<Expression<Func<Videos, bool>>> ifadesini çağırarak filtreyi oluşturuyoruz
+                return _videoDal.GetList(filter);
+            }
+            else
+            {
+                return _videoDal.GetAll(); // Filtre yoksa tüm veriler getiriliyor
+            }
+        }
+
+        
     }
 }

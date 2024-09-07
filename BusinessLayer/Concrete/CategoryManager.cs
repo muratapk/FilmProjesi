@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,19 @@ namespace BusinessLayer.Concrete
         public List<Category> GetAll()
         {
             return _categoryDal.GetAll();
+        }
+
+        public List<Category> GetList(Expression<Func<Category, bool>> filter = null)
+        {
+            if (filter != null)
+            {
+                // Func<Expression<Func<Videos, bool>>> ifadesini çağırarak filtreyi oluşturuyoruz
+                return _categoryDal.GetList(filter);
+            }
+            else
+            {
+                return _categoryDal.GetAll(); // Filtre yoksa tüm veriler getiriliyor
+            }
         }
 
         public void TAdd(Category entity)

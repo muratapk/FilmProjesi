@@ -19,7 +19,11 @@ namespace FilmProjesi.Controllers
         }
         public IActionResult CategoryList(int id)
         {
-            var result=vm.TGetById(id);
+            var result = vm.GetList(x => x.CategoryId == id);
+            if(result==null)
+            {
+                return RedirectToAction("Index","Home");
+            }
             return View(result);
 
         }

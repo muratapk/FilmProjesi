@@ -14,8 +14,8 @@ namespace DataAccessLayer.Abstract
         void Remove(T entity);
         T GetById(int id);
         List<T>GetAll();
-        List<T>GetAll(Expression<Func<T, bool>> filter);
-        
+        List<T>GetList(Expression<Func<T, bool>> filter);
+        //bizim isteğimize göre verileri filterlemek için kullanıyor
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,19 @@ namespace DataAccessLayer.Repositories
         public T GetById(int id)
         {
             return _context.Set<T>().Find(id);
+        }
+
+        public List<T> GetList(Expression<Func<T, bool>> filter)
+        {
+            if (filter != null)
+            {
+                return _context.Set<T>().Where(filter).ToList(); // Filtre uygulanıyor
+            }
+            else
+            {
+                return _context.Set<T>().ToList(); // Filtre yoksa tüm kayıtlar getiriliyor
+            }
+
         }
 
         public void Remove(T entity)
